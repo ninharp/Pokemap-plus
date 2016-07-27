@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:stretchColumns="*">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:contentDescription="about image description"
+            android:src="@drawable/ic_pokemap" />
+
+        <TextView
+            android:id="@+id/about_info_text"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+	<TableRow>
+
+		<TextView
+			android:id="@+id/about_legal_text"
+			android:layout_width="fill_parent"
+			android:width="0dip"
+			
+			android:layout_height="wrap_content"
+			android:textSize="12sp"
+			android:textStyle="italic"
+			android:layout_span="2"
+			android:layout_margin="8dip"
+			android:textColor="#cccccc" />
+	</TableRow>
+
+</TableLayout>

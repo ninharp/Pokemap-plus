@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sauernetworks.pokemap">
+
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+<application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+
+    <activity
+        android:name="com.sauernetworks.pokemap.views.MainActivity"
+        android:theme="@style/AppTheme.NoActionBar">
+    </activity>
+
+    <activity
+        android:name="com.sauernetworks.pokemap.views.LoginActivity">
+    </activity>
+
+    <activity
+        android:name="com.sauernetworks.pokemap.views.PermissionActivity">
+    </activity>
+
+    <activity
+        android:name="com.sauernetworks.pokemap.views.settings.SettingsActivity"
+        android:launchMode="singleTask"
+        android:parentActivityName="com.sauernetworks.pokemap.views.MainActivity"
+        android:theme="@style/AppTheme.NoActionBar" />
+    <activity
+        android:name="com.sauernetworks.pokemap.views.GoogleAuthActivity"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:parentActivityName="com.sauernetworks.pokemap.views.LoginActivity">
+    </activity>
+
+    <!--
+             use an alias in case we want to change the launch activity later without breaking
+             homescreen shortcuts.  Note must be defined after the targetActivity
+        -->
+    <activity-alias
+        android:name=".Launcher"
+        android:label="@string/app_name"
+        android:targetActivity="com.sauernetworks.pokemap.views.PermissionActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity-alias>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBhI6GH4cMfMtv8kA-nQE9jPVmMa0PLuMg" />
+
+</application>
+
+</manifest>
